@@ -21,7 +21,7 @@ echo "You will need to input your domain like 'domain.com' and the IP of your se
 read -p "Please input your domain."$'\n' domain
 read -p "Please input the IP of your server."$'\n' serverip
 while true; do
-    read -p "Start script? (Y/n)"$'\n' yn
+    read -p "Start script? (Y/n)" yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit;;
@@ -82,7 +82,7 @@ cd /opt
 git clone https://github.com/asciimoo/searx.git
 cd searx
 PS3='Would you like to build from tags (recommended) or from master?'
-options=("tags" "master" "quit")
+options=("tags" "master")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -96,9 +96,6 @@ do
             echo "Building from master..."
              git checkout master
              break
-            ;;
-        "quit")
-            break
             ;;
         *) echo "invalid option $REPLY";;
     esac
