@@ -81,7 +81,7 @@ done
 cd /opt
 git clone https://github.com/asciimoo/searx.git
 cd searx
-PS3='Would you like to build from tags (recommended) or from master?'
+PS3='Would you like to build from tags (recommended) or from master?'$'\n'
 options=("tags" "master")
 select opt in "${options[@]}"
 do
